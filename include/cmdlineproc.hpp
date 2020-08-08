@@ -47,7 +47,7 @@ namespace cmdlineproc {
 
             } 
 
-            void cmd_args::init_args(int argc, char *argv[]) { // takes argc and argv from int main() and processes them
+            void init_args(int argc, char *argv[]) { // takes argc and argv from int main() and processes them
 
                 for (int i = 1; i < argc; i++) {
                     
