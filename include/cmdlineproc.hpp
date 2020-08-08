@@ -39,7 +39,7 @@ namespace cmdlineproc {
             std::vector<std::string> flags; // flags from argv[] that have args == 0
             std::vector<std::string> args; // regular arguments
 
-            cmd_args();
+            cmd_args() {};
 
             void set_flag(std::string s, int args=0) { // args is how many arguments the flag takes, default=0
 
