@@ -23,7 +23,7 @@ int main (int argc, char *argv[]) {
     auto it_range = c.flag_args.equal_range("-b"); // get an iterator pair with all arguments of flag "-b"
    
     for (auto it1 = it_range.first; it1 < it_range.second; it++) {
-        std::cout << *it1 << std::endl; // print all arguments of flag "-b"
+        std::cout << (*it1).second << std::endl; // print all arguments of flag "-b"
     }
 
     return 0;
