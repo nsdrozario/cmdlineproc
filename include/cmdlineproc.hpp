@@ -66,7 +66,7 @@ namespace cmdlineproc {
                                 int current_i = i;
                                 i++;
                                 
-                                while (i < current_i+flag_arg_count[current_arg] && i < argc) {
+                                while (i < current_i+flag_arg_count[current_arg]+1 && i < argc) {
 
                                     std::string flag_arg (argv[i]);
                                     flag_args.insert(make_pair(current_arg, flag_arg));
