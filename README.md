@@ -43,6 +43,16 @@ Regular arguments that are passed to the program, not related to any flag/option
 Flags/options that are passed to the program that require 0 arguments can be found in the vector `cmd_args.flags`.
 Any flags that aren't registered with `cmd_args.set_flag` will be ignored.
 
+# Installing
+
+Use the following command:
+
+```
+sudo make install
+```
+
+You can edit the install path variable in the Makefile if you don't want `cmdlineproc.hpp` to be installed to `/usr/include`.
+
 ## License
 
 This library is under the MIT License.
