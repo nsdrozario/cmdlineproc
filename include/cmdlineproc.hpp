@@ -45,7 +45,13 @@ namespace cmdlineproc {
 
                 flag_arg_count.insert(std::make_pair(s,args));
 
-            } 
+            }
+        
+            bool flag_exists(std::string f) {
+            
+                return std::find(flags.begin(), flags.end(), f) != flags.end();
+                
+            }
 
             void init_args(int argc, char *argv[]) { // takes argc and argv from int main() and processes them
 
