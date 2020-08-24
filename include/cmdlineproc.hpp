@@ -95,6 +95,32 @@ namespace cmdlineproc {
         private:
 
             std::map<std::string, int> flag_arg_count;
+            std::string get_quoted_arg(int current_index, int argc, char *argv[]) { // rework this so that the current index is passed by reference so it will be updated instead of making a copy
+            
+                std::string current_arg (argv[current_index]);
+                std::stringstream arg;
+                int i = current_index; // increment current_index by reference so that the main part of init_args() will start where this function stopped
+                
+                if (current_arg[0] == '"' || current_arg[0] == '\'') {
+                    arg << current_arg.substr(1,current_arg.length()-1);
+                    i++; 
+                    current_arg = std::string(argv[i]);
+                    while(current_arg.back() != '"' && current_arg.back() != '\'' && i < argc-1) {
+                        arg << " " << current_arg;
+                    }
+                    if ( !(i < argc-2)) {
+                        return arg.str();
+                    } else {
+                        std::string tmp (argv[i+1]);
+                        arg << tmp.substr(1, tmp.length()-1);
+                        return arg.str();
+                    }
+                } else {
+                    return std::string (argv[current_index]);
+                }
+                
+                
+            }
 
     };
 
